@@ -1,0 +1,165 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #666;
+  background: #f3f3f3;
+
+  h1 {
+    margin-bottom: 50px;
+    color: #2f2f2f;
+  }
+}
+
+.about-wrapper {
+  margin: 30px auto;
+  width: 100%;
+  max-width: 75%;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px #e4e4e4 solid;
+  box-shadow: 0px 1px #f9f9f9;
+  padding-bottom: 20px;
+
+  ul {
+    text-align: left;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+}
+.no-border-bottom {
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.about-content-item {
+  width: 600px;
+
+  a {
+    text-decoration: none;
+    color: #ff754d;
+  }
+  p {
+    margin: 2px;
+  }
+}
+
+.fas {
+  color: #ff5f30;
+}
+
+///////////////////
+.about-solo {
+  display: flex;
+  flex-direction: column;
+  color: #666;
+  background: #f3f3f3;
+
+  h1 {
+    margin-bottom: 50px;
+    color: #2f2f2f;
+  }
+}
+
+.about-solo-wrapper {
+  margin: 30px auto;
+  width: 100%;
+  max-width: 75%;
+}
+
+.about-solo-title {
+  text-align: center;
+
+  h1 {
+    color: #636363;
+
+  }
+}
+
+.about-solo-content {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px #e4e4e4 solid;
+  box-shadow: 0px 1px #f9f9f9;
+  padding-bottom: 20px;
+
+  ul {
+    text-align: left;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+}
+
+.about-solo-content-codes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px #e4e4e4 solid;
+  box-shadow: 0px 1px #f9f9f9;
+  padding-bottom: 20px;
+
+
+
+  a {
+    text-decoration: none;
+    color: #ff754d;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+}
+
+.about-solo-content-item-codes {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  p {
+    margin: 2px;
+  }
+}
+
+.no-border-bottom {
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.about-solo-content-item {
+  width: 600px;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ff754d;
+  }
+  p {
+    margin: 2px;
+  }
+}
+
+.fas {
+  color: #ff5f30;
+}

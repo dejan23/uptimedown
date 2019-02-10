@@ -1,0 +1,23 @@
+.footer {
+  background-color: #222;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+    padding: 10px 0;
+  text-align: center;
+
+  h4 {
+  	font-weight: 400;
+  	color: #868686;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 10px;
+  	font-size: 14px;
+  	font-weight: 500;
+  	line-height: 1.42px;
+  	color: #656565;
+  	padding-bottom: 5px;
+  }
+}

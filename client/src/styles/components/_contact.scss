@@ -1,0 +1,45 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #666;
+  background: #FFF;
+  margin-bottom: 20px;
+
+  h1 {
+    color: #2f2f2f;
+  }
+}
+
+.contact-wrapper {
+  margin: 30px auto;
+  width: 100%;
+  max-width: 75%;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.contact-content-item {
+  width: 600px;
+}
+
+.fas {
+  color: #ff5f30;
+}
+
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #666;
+  margin: 100px 0;
+
+  h1 {
+    margin-bottom: 50px;
+    color: #2f2f2f;
+  }
+}

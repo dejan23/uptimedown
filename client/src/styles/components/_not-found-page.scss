@@ -1,0 +1,22 @@
+.not-found-page {
+  align-items: center;
+  color: #e8e9eb;
+  display: flex;
+  justify-content: center;
+
+}
+
+.not-found-page__box {
+  text-align: center;
+}
+
+.not-found-page__title {
+  font-size: 70px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.not-found-page__text {
+  color: #645a53;
+  font-weight: 600;
+}
