@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {history} from '../routers/AppRouter';
 
 export const clearUserState = () => ({
   type: 'CLEAR_USER_STATE'
@@ -29,7 +28,7 @@ export const userIsLoading = (bool) => ({
 export const startSetUser = username => {
   return dispatch => {
     dispatch(userIsLoading(true))
-    axios.get(`${process.env.ROOT_URL}/api/accounts/${username}`)
+    axios.get(`${process.env.API_URL}/accounts/${username}`)
       .then(response => {
         dispatch(setUser(response.data));
       })
@@ -48,7 +47,7 @@ export const setUsers = users => ({
 export const startSetUsers = () => {
   return dispatch => {
     dispatch(userIsLoading(true))
-    axios.get(`${process.env.ROOT_URL}/api/users`)
+    axios.get(`${process.env.API_URL}/users`)
       .then(response => {
         dispatch(userIsLoading(false))
         dispatch(setUsers(response.data));
@@ -67,7 +66,7 @@ export const setUserUpdate = user => ({
 
 export const startSetUserUpdate = (formData) => {
   return async dispatch => {
-    return axios.put(`${process.env.ROOT_URL}/api/accounts/user`, formData, {
+    return axios.put(`${process.env.API_URL}/accounts/user`, formData, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -90,7 +89,7 @@ export const setUserProfile = profile => ({
 export function startSetUserProfile() {
   return function(dispatch) {
     dispatch(userIsLoading(true))
-    return axios.get(`${process.env.ROOT_URL}/api/accounts/user`, {
+    return axios.get(`${process.env.API_URL}/accounts/user`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -111,7 +110,7 @@ export const setValidateUser = validate => ({
 
 export function startSetValidateUser(token) {
   return function(dispatch) {
-    axios.get(`${process.env.ROOT_URL}/api/accounts/validate/${token}`)
+    axios.get(`${process.env.API_URL}/accounts/validate/${token}`)
       .then(response => {
         dispatch(setValidateUser(response.data))
       })
@@ -130,7 +129,7 @@ export const setResendEmail = resentEmail => ({
 
 export function startSetResendEmail(email) {
   return function(dispatch) {
-    return axios.post(`${process.env.ROOT_URL}/api/accounts/resend-email`, email)
+    return axios.post(`${process.env.API_URL}/accounts/resend-email`, email)
       .then(response => {
         dispatch(setResendEmail(response.data))
         return response.data
@@ -149,7 +148,7 @@ export const setResetPasswordByEmail = newPassword => ({
 
 export function startSetResetPasswordByEmail(email) {
   return function(dispatch) {
-    return axios.post(`${process.env.ROOT_URL}/api/accounts/reset-password-by-email`, email)
+    return axios.post(`${process.env.API_URL}/accounts/reset-password-by-email`, email)
       .then(response => {
         dispatch(setResendEmail(response.data))
         return response.data
@@ -167,7 +166,7 @@ export const setActivateNewPassword = newPasswordActivate => ({
 
 export function startSetActivateNewPassword(token) {
   return function(dispatch) {
-    return axios.get(`${process.env.ROOT_URL}/api/accounts/activate-new-password?token=${token}`)
+    return axios.get(`${process.env.API_URL}/accounts/activate-new-password?token=${token}`)
       .then(response => {
         dispatch(setActivateNewPassword(response.data))
         return response.data

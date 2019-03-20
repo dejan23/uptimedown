@@ -18,20 +18,12 @@
 
 .intro-content-wrapper {
   display: flex;
-  margin: 220px auto;
   width: 100%;
-  max-width: 75%;
-  // align-items: center;
-
-  @media (max-width: 950px) {
-
-    display: flex;
-    margin: 0 auto;
-
-  }
+  align-items: center;
+  margin-bottom: 100px;
+  margin-left: 250px;
 }
 .intro-content {
-  // background: rgba(0,0,0, 0.5);
   font-size: 29px;
   width: 800px;
   color: white;

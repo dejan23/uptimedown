@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {history} from '../routers/AppRouter';
 import _ from 'lodash'
 
 export const logIsLoading = (bool) => ({
@@ -20,7 +19,7 @@ export const setLog = log => ({
 export const startSetLog = (id) => {
   return async dispatch => {
     dispatch(logIsLoading(true))
-    return axios.get(`${process.env.ROOT_URL}/api/log/${id}`, {
+    return axios.get(`${process.env.API_URL}/log/${id}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -42,7 +41,7 @@ export const setLogStats = log => ({
 export const startSetLogStats = (id) => {
   return async dispatch => {
     dispatch(logIsLoading(true))
-    return axios.get(`${process.env.ROOT_URL}/api/logStats/${id}`, {
+    return axios.get(`${process.env.API_URL}/logStats/${id}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {

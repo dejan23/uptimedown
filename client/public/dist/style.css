@@ -504,13 +504,10 @@ body {
 
 .intro-content-wrapper {
   display: flex;
-  margin: 220px auto;
   width: 100%;
-  max-width: 75%; }
-  @media (max-width: 950px) {
-    .intro-content-wrapper {
-      display: flex;
-      margin: 0 auto; } }
+  align-items: center;
+  margin-bottom: 100px;
+  margin-left: 250px; }
 
 .intro-content {
   font-size: 29px;

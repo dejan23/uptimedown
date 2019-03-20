@@ -20,8 +20,8 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
     <input {...input} placeholder={label} type={type} />
     {touched &&
-     error &&
-     <div className="error">{error}</div>}
+      error &&
+      <div className="error">{error}</div>}
   </div>
 )
 
@@ -35,7 +35,7 @@ class Login extends React.Component {
   }
 
   componentWillUnmount() {
-    if(this.props.errorMessage) {
+    if (this.props.errorMessage) {
       this.props.clearAlert();
     }
   }
@@ -46,14 +46,14 @@ class Login extends React.Component {
     })
     this.props.loginUser(values)
       .then(success => {
-       if(success === true) {
-         return this.props.history.push('/user/dashboard')
-       }
-       this.setState({
-         isLoading: false
-      })
+        if (success === true) {
+          return this.props.history.push('/user/dashboard')
+        }
+        this.setState({
+          isLoading: false
+        })
 
-     })
+      })
       .catch(err => {
         this.setState({
           isLoading: false
@@ -62,7 +62,7 @@ class Login extends React.Component {
   }
 
   renderAlert() {
-    if(this.props.errorMessage) {
+    if (this.props.errorMessage) {
       return (
         <div className="alert">
           <strong>Oops!</strong> {this.props.errorMessage}
@@ -73,66 +73,56 @@ class Login extends React.Component {
 
   render() {
     const { handleSubmit, pristine, submitting } = this.props;
-    // if(this.props.location.state) {
-    //   return (
-    //     <FlashMessage props={this.props.location.state.message}/>
-    //   )
-    // }
-
 
     return (
+      <form className="login-container" onSubmit={handleSubmit(this.submitForm.bind(this))}>
+        <div className="login-wrapper">
+          <div className="login-title">
+            <h2>Login</h2>
+            <p>Welcome back!</p>
+          </div>
 
-      <div>
-        {this.props.location.state && <FlashMessage props={this.props.location.state.message}/>}
-        <form className="login-container" onSubmit={handleSubmit(this.submitForm.bind(this))}>
-          <div className="login-wrapper">
-            <div className="login-title">
-              <h2>Login</h2>
-              <p>Welcome back!</p>
+          <div className="login-info">
+            <div className="login-email">
+              <p>Email</p>
+              <Field
+                name="email"
+                type="text"
+                label="enter your email address"
+                validate={[requiredEmail, email, maxLength45]}
+                component={renderField}
+              />
             </div>
 
-            <div className="login-info">
-              <div className="login-email">
-                <p>Email</p>
-                <Field
-                  name="email"
-                  type="text"
-                  label="enter your email address"
-                  validate={[requiredEmail, email, maxLength45]}
-                  component={renderField}
-                />
-              </div>
-
-              <div className="login-password">
-                <p>Password</p>
-                <Field
-                  name="password"
-                  type="password"
-                  label="enter your password"
-                  validate={requiredPassword}
-                  component={renderField}
-                />
-              </div>
+            <div className="login-password">
+              <p>Password</p>
+              <Field
+                name="password"
+                type="password"
+                label="enter your password"
+                validate={requiredPassword}
+                component={renderField}
+              />
             </div>
-            {this.renderAlert()}
-            <div className="login-submit">
-              <button className="login-button" type="submit" disabled={this.state.isLoading || pristine}>Login</button>
-              <p><Link to='/accounts/reset-password'>Forgot password?</Link></p>
-              <p>Don't have an account? <Link to='/signup'>Signup</Link></p>
-              <p>Haven't received confirmation email? <Link to='/accounts/resend-email'>Resend email</Link></p>
-            </div>
+          </div>
+          {this.renderAlert()}
+          <div className="login-submit">
+            <button className="login-button" type="submit" disabled={this.state.isLoading || pristine}>Login</button>
+            <p><Link to='/accounts/reset-password'>Forgot password?</Link></p>
+            <p>Don't have an account? <Link to='/signup'>Signup</Link></p>
+            <p>Haven't received confirmation email? <Link to='/accounts/resend-email'>Resend email</Link></p>
+          </div>
 
-            <div className="login-demoacc">
-              <strong>demo account</strong>
+          <div className="login-demoacc">
+            <strong>demo account</strong>
+            <br />
+            user: demo@demo.com
               <br />
-              user: demo@demo.com
-              <br />
-              password: demo
+            password: demo
             </div>
 
-            </div>
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

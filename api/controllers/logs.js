@@ -1,8 +1,5 @@
 const User = require('../models/User');
-const Checks = require('../models/Checks');
 const Logs = require('../models/Logs');
-const Events = require('../models/Events');
-const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 const moment = require('moment')
 
