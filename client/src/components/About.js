@@ -8,12 +8,12 @@ const About = () => (
         <div className="about-solo-content-item">
           <h3>Monitoring</h3>
           <p>We monitor your site to verify that your site works.
-            Every three minutes we perform a check to see if your server is up.</p>
+            Every few minutes we perform a check to see if your server is up.</p>
 
           <h3>How it works</h3>
           <ul>
-            <li><i className="fas fa-arrow-right"></i> It asks for your websites headers and gets status codes like
-               "200-ok", "404-not found", every 3 minutes</li>
+            <li><i className="fas fa-arrow-right"></i> We send requests (same what happens when you visit the website) to given URL and get status codes like
+                     "200-ok", "404-not found", etc. every few minutes</li>
             <li><i className="fas fa-arrow-right"></i> If the returned status code is etc. "200", "201", "301", it's all good</li>
             <li><i className="fas fa-arrow-right"></i> If the status code is "400+" and "500+", or there is not any, then there is some kind of a problem</li>
             <li><i className="fas fa-arrow-right"></i> If the site is not responding for the next 3 to 30 seconds we will consider that the site is down,

@@ -1,12 +1,12 @@
-const Checks = require('../controllers/checks');
+const Check = require('../controllers/check');
 const verifyJWT = require('../middlewares/verify-jwt')
 
 module.exports = function(app) {
-  app.post('/api/checks', verifyJWT, Checks.createCheck);
-  app.get('/api/checks/:id', verifyJWT, Checks.getCheckData);
-  app.put('/api/checks/:id', verifyJWT, Checks.updateCheck);
-  app.delete('/api/checks/:id', verifyJWT, Checks.deleteCheck);
+  app.post('/checks', verifyJWT, Check.createCheck);
+  app.get('/checks/:id', verifyJWT, Check.getCheckData);
+  app.put('/checks/:id', verifyJWT, Check.updateCheck);
+  app.delete('/checks/:id', verifyJWT, Check.deleteCheck);
 
-  app.get('/api/check/:id', verifyJWT, Checks.pauseCheck);
+  app.get('/check/pause/:id', verifyJWT, Check.pauseCheck);
 
 }

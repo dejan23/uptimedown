@@ -8,10 +8,14 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
     <input {...input} placeholder={label} type={type} />
     {touched &&
-     error &&
-     <div className="error">{error}</div>}
+      error &&
+      <div className="error">{error}</div>}
   </div>
 )
+
+// -------------- validation ----------
+const requiredUsername = value => (value ? undefined : 'Please enter your username to delete account')
+// -------------- end validation --------
 
 class AccountDelete extends React.Component {
   constructor(props) {
@@ -24,7 +28,7 @@ class AccountDelete extends React.Component {
   }
 
   renderAlert() {
-    if(this.state.errorMessage) {
+    if (this.state.errorMessage) {
       return (
         <div className="alert">
           <strong>Oops!</strong> {this.state.errorMessage}
@@ -35,30 +39,30 @@ class AccountDelete extends React.Component {
 
   submitForm = values => {
     const usernameFromStorage = localStorage.getItem('username');
-    if(values.username === usernameFromStorage) {
+    if (values.username === usernameFromStorage) {
       this.props.startSetDeleteUser()
-      .then((res) => {
-        if(res.success === false) {
+        .then((res) => {
+          if (res.success === false) {
+            this.setState({
+              isLoading: false,
+              savedMessage: (
+                <div className="alert">
+                  {res.message}
+                </div>
+              )
+            })
+          }
+        })
+        .catch(err => {
           this.setState({
             isLoading: false,
             savedMessage: (
               <div className="alert">
-                {res.message}
-              </div>
-            )
-         })
-       }
-     })
-      .catch(err => {
-        this.setState({
-          isLoading: false,
-          savedMessage: (
-            <div className="alert">
-               Connection error.
+                Connection error.
             </div>
-          )
+            )
+          })
         })
-      })
     } else {
       this.setState({
         errorMessage: 'You misspelled you username'
@@ -70,10 +74,6 @@ class AccountDelete extends React.Component {
   render() {
     const { handleSubmit, pristine, disabled } = this.props;
     const usernameFromStorage = localStorage.getItem('username');
-
-    // -------------- validation ----------
-    const requiredUsername = value => (value ? undefined : 'Please enter your username to delete account')
-    // -------------- end validation --------
 
     return (
       <form className="profile-form-wrapper" onSubmit={handleSubmit(this.submitForm.bind(this))}>
@@ -101,8 +101,8 @@ class AccountDelete extends React.Component {
               <div className="profile-form-group">
 
                 <div className="profile-form-item">
-                  <p style={{color: 'red'}}>Once you delete your account, there is no going back. Please be certain.<br />
-                  Every check, log and event will be deleted permanently.</p>
+                  <p style={{ color: 'red' }}>Once you delete your account, there is no going back. Please be certain.<br />
+                    Every check, log and event will be deleted permanently.</p>
                   <p>Enter your username and click Delete Account</p>
                   <Field
                     name="username"
@@ -136,4 +136,4 @@ AccountDelete = reduxForm({
   forceUnregisterOnUnmount: true
 })(AccountDelete)
 
-export default connect(null, {startSetDeleteUser})(AccountDelete);
+export default connect(null, { startSetDeleteUser })(AccountDelete);

@@ -19,7 +19,7 @@ export const setEvent = event => ({
 
 export const startSetEvent = (id) => {
   return async dispatch => {
-    return axios.get(`${process.env.ROOT_URL}/api/event/${id}`, {
+    return axios.get(`${process.env.API_URL}/event/${id}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -40,7 +40,7 @@ export const setEvents = events => ({
 
 export const startSetEvents = (id, page) => {
   return async dispatch => {
-    return axios.get(`${process.env.ROOT_URL}/api/events/${id}?page=${page}`, {
+    return axios.get(`${process.env.API_URL}/events/${id}?page=${page}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {

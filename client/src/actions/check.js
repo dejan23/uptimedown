@@ -24,7 +24,7 @@ export const clearCheckState = () => ({
 // ADD_CHECK
 export const startAddCheck = (values) => {
   return dispatch => {
-    return axios.post(`${process.env.ROOT_URL}/api/checks`, values,
+    return axios.post(`${process.env.API_URL}/checks`, values,
         {
           headers: {authorization: localStorage.getItem('token')}
         }
@@ -44,7 +44,7 @@ export const setChecks = checks => ({
 export const startSetChecks = () => {
   return async dispatch => {
     dispatch(checkIsLoading(true))
-    return axios.get(`${process.env.ROOT_URL}/api/checks/:id`, {
+    return axios.get(`${process.env.API_URL}/checks/:id`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -66,7 +66,7 @@ export const setCheck = check => ({
 export const startSetCheck = (id) => {
   return async dispatch => {
     dispatch(checkIsLoading(true))
-    return axios.get(`${process.env.ROOT_URL}/api/checks/${id}`, {
+    return axios.get(`${process.env.API_URL}/checks/${id}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -88,7 +88,7 @@ export const setCheckCount = checkCount => ({
 export const startSetCheckCount = () => {
   return async dispatch => {
     dispatch(checkIsLoading(true))
-    return axios.get(`${process.env.ROOT_URL}/api/accounts/user`, {
+    return axios.get(`${process.env.API_URL}/accounts/user`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -104,7 +104,7 @@ export const startSetCheckCount = () => {
 // EDIT_CHECK
 export function startEditCheck(values, id) {
   return dispatch => {
-    return axios.put(`${process.env.ROOT_URL}/api/checks/${id}`, values,
+    return axios.put(`${process.env.API_URL}/checks/${id}`, values,
         {
           headers: {authorization: localStorage.getItem('token')}
         }
@@ -118,7 +118,7 @@ export function startEditCheck(values, id) {
 // DELETE_CHECK
 export const startDeleteCheck = (id) => {
   return async dispatch => {
-    return axios.delete(`${process.env.ROOT_URL}/api/checks/${id}`, {
+    return axios.delete(`${process.env.API_URL}/checks/${id}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {
@@ -134,7 +134,7 @@ export const startDeleteCheck = (id) => {
 // Pause check
 export const startPauseCheck = (id) => {
   return async dispatch => {
-    return axios.get(`${process.env.ROOT_URL}/api/check/${id}`, {
+    return axios.get(`${process.env.API_URL}/check/pause/${id}`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(async (response) => {

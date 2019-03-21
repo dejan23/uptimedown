@@ -71,11 +71,12 @@ const renderTimeoutSelector = ({ input, meta: { touched, error } }) => (
     <select {...input}>
       <option value="">select</option>
 
-      <option value="3">3 sec</option>
-      <option value="5">5 sec</option>
-      <option value="10">10 sec</option>
       <option value="20">20 sec</option>
-      <option value="30">30 sec</option>
+      <option value="40">40 sec</option>
+      <option value="60">60 sec</option>
+      <option value="80">80 sec</option>
+      <option value="100">100 sec</option>
+      <option value="120">120 sec</option>
     </select>
     {touched &&
      error &&
@@ -251,7 +252,7 @@ CheckNew = reduxForm({
 const mapStateToProps = (state, props) => ({
   checks: state.check.checks,
   checkCount: state.check.checkCount,
-  initialValues: {protocol: 'http', successCodes: ['200', '201', '301'], method: 'get', timeoutSeconds: '10'}
+  initialValues: {protocol: 'http', successCodes: ['200', '201', '301'], method: 'get', timeoutSeconds: '20'}
 })
 
 CheckNew = connect(mapStateToProps, { startAddCheck, startSetCheckCount })(CheckNew);

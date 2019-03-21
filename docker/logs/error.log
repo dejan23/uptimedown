@@ -1,0 +1,24 @@
+2019/03/19 17:07:19 [emerg] 13#13: host not found in upstream "api:3000" in /etc/nginx/conf.d/default.conf:2
+2019/03/19 19:43:42 [warn] 13#13: server name "/var/log/nginx/application.access.log" has suspicious symbols in /etc/nginx/conf.d/default.conf:6
+2019/03/19 19:43:42 [warn] 13#13: server name "/var/log/nginx/application.access.log" has suspicious symbols in /etc/nginx/conf.d/default.conf:25
+2019/03/19 19:43:42 [warn] 13#13: conflicting server name "access_log" on 0.0.0.0:80, ignored
+2019/03/19 19:43:42 [warn] 13#13: conflicting server name "/var/log/nginx/application.access.log" on 0.0.0.0:80, ignored
+2019/03/19 19:47:53 [warn] 13#13: server name "/var/log/nginx/application.access.log" has suspicious symbols in /etc/nginx/conf.d/default.conf:6
+2019/03/19 19:47:53 [warn] 13#13: server name "/var/log/nginx/application_api.access.log" has suspicious symbols in /etc/nginx/conf.d/default.conf:25
+2019/03/19 19:47:53 [warn] 13#13: conflicting server name "access_log" on 0.0.0.0:80, ignored
+2019/03/19 19:55:03 [emerg] 13#13: host not found in upstream "api:3000" in /etc/nginx/conf.d/default.conf:17
+2019/03/19 19:57:48 [error] 15#15: *5 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", upstream: "http://172.20.0.6:3000/api/accounts/login", host: "api.localhost"
+2019/03/19 20:00:36 [error] 15#15: *10 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", upstream: "http://172.20.0.6:3000/api/accounts/login", host: "api.localhost"
+2019/03/19 20:18:29 [error] 14#14: *1 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "GET / HTTP/1.1", host: "api.localhost"
+2019/03/19 20:18:30 [error] 14#14: *1 open() "/etc/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "GET /favicon.ico HTTP/1.1", host: "api.localhost", referrer: "http://api.localhost/"
+2019/03/19 20:18:37 [error] 14#14: *3 open() "/etc/nginx/html/api/accounts/login" failed (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", host: "api.localhost"
+2019/03/19 20:19:24 [error] 14#14: *4 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "GET / HTTP/1.1", host: "api.localhost"
+2019/03/19 20:19:25 [error] 14#14: *4 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "GET / HTTP/1.1", host: "api.localhost"
+2019/03/19 20:19:28 [error] 14#14: *3 open() "/etc/nginx/html/api/accounts/login" failed (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", host: "api.localhost"
+2019/03/19 20:19:54 [error] 14#14: *3 open() "/etc/nginx/html/api/accounts/login" failed (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", host: "api.localhost"
+2019/03/19 20:19:59 [error] 14#14: *3 open() "/etc/nginx/html/api/accounts/login" failed (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", host: "api.localhost"
+2019/03/19 20:20:08 [error] 14#14: *3 open() "/etc/nginx/html/api/accounts/login" failed (2: No such file or directory), client: 172.20.0.1, server: api.localhost, request: "POST /api/accounts/login HTTP/1.1", host: "api.localhost"
+2019/03/19 20:51:38 [emerg] 14#14: host not found in upstream "api:3000" in /etc/nginx/conf.d/default.conf:17
+2019/03/19 21:06:56 [emerg] 13#13: host not found in upstream "api:3000" in /etc/nginx/conf.d/default.conf:17
+2019/03/19 21:42:58 [emerg] 14#14: host not found in upstream "api:3000" in /etc/nginx/conf.d/default.conf:17
+2019/03/19 22:09:05 [emerg] 14#14: host not found in upstream "api:3000" in /etc/nginx/conf.d/default.conf:17

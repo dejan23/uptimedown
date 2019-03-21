@@ -1,7 +1,7 @@
-const Logs = require('../controllers/event');
+const Events = require('../controllers/events');
 const verifyJWT = require('../middlewares/verify-jwt')
 
 module.exports = function(app) {
-  app.get('/api/event/:id', verifyJWT, Logs.getEventData);
-  app.get('/api/events/:id', verifyJWT, Logs.getEventsData);
+  app.get('/event/:id', verifyJWT, Events.getEventData);
+  app.get('/events/:id', verifyJWT, Events.getEventsData);
 }

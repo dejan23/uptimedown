@@ -31,7 +31,7 @@ export const clearMessage = () => ({
 
 export function registerUser(formData) {
   return function(dispatch) {
-    return axios.post(`${process.env.ROOT_URL}/api/accounts/signup`, formData)
+    return axios.post(`${process.env.API_URL}/accounts/signup`, formData)
     .then(response => {
       dispatch(successMessage(response.data.message))
       return response.data.success
@@ -42,7 +42,7 @@ export function registerUser(formData) {
 
 export function loginUser(formData) {
   return function(dispatch) {
-    return axios.post(`${process.env.ROOT_URL}/api/accounts/login`, formData)
+    return axios.post(`${process.env.API_URL}/accounts/login`, formData)
       .then(async (response) => {
         await localStorage.setItem('username', response.data.username);
         await localStorage.setItem('id', response.data.id);
@@ -74,7 +74,7 @@ export const setUserProfile = profile => ({
 
 export function startSetUserProfile() {
   return function(dispatch) {
-    return axios.get(`${process.env.ROOT_URL}/api/accounts/profile`, {
+    return axios.get(`${process.env.API_URL}/accounts/profile`, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(response => {
@@ -86,7 +86,7 @@ export function startSetUserProfile() {
 
 export function startSetResetPassword({currentPassword, newPassword}) {
   return function(dispatch) {
-    return axios.post(`${process.env.ROOT_URL}/api/accounts/reset-password`, {currentPassword, newPassword}, {
+    return axios.post(`${process.env.API_URL}/accounts/reset-password`, {currentPassword, newPassword}, {
       headers: {authorization: localStorage.getItem('token')}
     })
     .then(response => {
@@ -104,7 +104,7 @@ export function startSetResetPassword({currentPassword, newPassword}) {
 
 export function startSetDeleteUser() {
   return dispatch => {
-    return axios.delete(`${process.env.ROOT_URL}/api/accounts/user`, {
+    return axios.delete(`${process.env.API_URL}/accounts/user`, {
       headers: {authorization: localStorage.getItem('token')}
     })
       .then(response => {
