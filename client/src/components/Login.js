@@ -73,7 +73,12 @@ class Login extends React.Component {
 
   render() {
     const { handleSubmit, pristine, submitting } = this.props;
-
+    if (this.props.location.state) {
+      return (
+        <FlashMessage props={this.props.location.state.message} />
+      )
+    }
+    
     return (
       <form className="login-container" onSubmit={handleSubmit(this.submitForm.bind(this))}>
         <div className="login-wrapper">
