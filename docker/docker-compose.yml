@@ -4,7 +4,7 @@ services:
     container_name: uptimedown_mongodb
     restart: ${RESTART}
     image: 'mongo:latest'
-    command: [--auth]
+    command: ${MONGO_AUTH}
     volumes:
       - ./data/db:/data/db
     expose:
