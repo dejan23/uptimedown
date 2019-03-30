@@ -11,3 +11,6 @@ Check README in each folder for more information
 ## Update 
 - march 20th 2019
     - Updated dependencies, code refactor, docker setup changed, pushed to a new branch
+    
+## To Do
+- Refactor React side of app
