@@ -10,7 +10,7 @@ require("dotenv").config();
 // DB setup
 mongoose.connect(
 	process.env.MONGO_URI,
-	{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
+	{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: false },
 	function(err, db) {
 		if (err) {
 			console.log("Unable to connect to the mongoDB server. Error:", err);
